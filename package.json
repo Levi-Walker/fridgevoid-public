@@ -2,7 +2,7 @@
   "name": "fridgevoid",
   "private": true,
   "scripts": {
-    "dev": "npm --prefix backend run dev",
+    "dev": "node scripts/dev.js",
     "dev:backend": "npm --prefix backend run dev",
     "dev:frontend": "npm --prefix frontend run dev",
     "mongo:up": "npm --prefix backend run mongo:up",
