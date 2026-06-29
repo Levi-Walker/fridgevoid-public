@@ -1,0 +1,324 @@
+.leftover-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  color: var(--text-primary);
+  background: var(--card-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.leftover-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-panel);
+  transform: translateY(-1px);
+}
+
+.leftover-card:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.leftover-card-expiring {
+  border-top-color: var(--status-expiring-text);
+}
+
+.leftover-card-useSoon {
+  border-top-color: var(--status-useSoon-text);
+}
+
+.leftover-card-expired {
+  border-top-color: var(--status-expired-text);
+}
+
+.leftover-card-fresh {
+  border-top-color: var(--status-fresh-text);
+}
+
+.leftover-image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--card-media-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.leftover-image::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 64%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.22) 58%, transparent);
+  opacity: 1;
+  transition: opacity 0.16s ease;
+  pointer-events: none;
+}
+
+.leftover-card:hover .leftover-image::after {
+  opacity: 0.9;
+}
+
+.leftover-image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leftover-emoji {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.leftover-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.42rem;
+  padding: 0.58rem;
+}
+
+.leftover-title-overlay {
+  position: absolute;
+  left: 0.52rem;
+  right: 0.52rem;
+  bottom: 0.46rem;
+  z-index: 1;
+  min-width: 0;
+  pointer-events: none;
+}
+
+.leftover-title-overlay h3 {
+  min-width: 0;
+  margin: 0;
+  color: #fff;
+  font-size: 0.96rem;
+  font-weight: 900;
+  line-height: 1.08;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.58);
+  overflow-wrap: anywhere;
+}
+
+.leftover-status {
+  position: absolute;
+  top: 0.32rem;
+  right: 0.32rem;
+  z-index: 1;
+  flex-shrink: 0;
+  max-width: calc(100% - 0.64rem);
+  padding: 0.12rem 0.3rem;
+  border-radius: 4px;
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.leftover-status-expiring {
+  background: var(--status-expiring-bg);
+  color: var(--status-expiring-text);
+}
+
+.leftover-status-useSoon {
+  background: var(--status-useSoon-bg);
+  color: var(--status-useSoon-text);
+}
+
+.leftover-status-expired {
+  background: var(--status-expired-bg);
+  color: var(--status-expired-text);
+}
+
+.leftover-status-fresh {
+  background: var(--status-fresh-bg);
+  color: var(--status-fresh-text);
+}
+
+.leftover-meta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.38rem;
+  margin: 0;
+  padding: 0;
+}
+
+.leftover-meta div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.leftover-meta dt {
+  color: var(--text-muted);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.leftover-meta dd {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 0.74rem;
+  font-weight: 650;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  white-space: nowrap;
+}
+
+.leftover-container-row {
+  display: flex;
+  min-width: 0;
+}
+
+.leftover-container {
+  min-width: 0;
+  margin: -0.08rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 650;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.leftover-notes-section,
+.leftover-overlay {
+  display: none;
+}
+
+.leftover-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.leftover-tag {
+  max-width: 100%;
+  min-height: 1.25rem;
+  padding: 0.12rem 0.28rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface-soft);
+  color: var(--text-secondary);
+  font-size: 0.62rem;
+  font-weight: 750;
+  line-height: 1;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.leftover-tag:hover {
+  color: var(--text-primary);
+  background: var(--surface-muted);
+  border-color: var(--border-strong);
+}
+
+.leftover-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.28rem;
+  margin-top: auto;
+  padding-top: 0.1rem;
+}
+
+.leftover-card-actions-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.leftover-card-button {
+  width: 100%;
+  min-height: 1.62rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.14rem;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--text-primary);
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+  white-space: nowrap;
+}
+
+.leftover-card-button:hover:not(:disabled) {
+  background: var(--surface-muted);
+  border-color: var(--border-strong);
+}
+
+.leftover-card-button:disabled {
+  opacity: 0.62;
+  cursor: not-allowed;
+}
+
+.leftover-card-button-danger {
+  background: transparent;
+  color: var(--accent-terracotta);
+  border-color: var(--warning-border);
+}
+
+.leftover-card-button-danger:hover:not(:disabled) {
+  color: var(--button-primary-text);
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+}
+
+.leftover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.85rem;
+  width: 100%;
+}
+
+@media (max-width: 720px) {
+  .leftover-grid {
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    gap: 0.7rem;
+  }
+
+  .leftover-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .leftover-info {
+    padding: 0.56rem;
+  }
+
+  .leftover-title-overlay {
+    left: 0.48rem;
+    right: 0.48rem;
+    bottom: 0.42rem;
+  }
+
+  .leftover-meta {
+    gap: 0.32rem;
+  }
+
+  .leftover-card-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .leftover-card-actions-three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

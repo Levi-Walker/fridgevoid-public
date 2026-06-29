@@ -1,0 +1,13 @@
+services:
+  mongo:
+    image: mongo:8
+    container_name: fridgevoid-mongo
+    ports:
+      - "${MONGO_PORT:-27017}:27017"
+    environment:
+      MONGO_INITDB_DATABASE: "${MONGO_DATABASE:-fridgevoid}"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

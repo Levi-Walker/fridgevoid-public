@@ -1,0 +1,15 @@
+{
+  "name": "fridgevoid",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix backend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "mongo:up": "npm --prefix backend run mongo:up",
+    "mongo:down": "docker compose down",
+    "start": "npm --prefix backend start",
+    "start:prod": "npm --prefix backend run start:prod",
+    "test": "npm --prefix backend test",
+    "build": "npm --prefix frontend run build"
+  }
+}
